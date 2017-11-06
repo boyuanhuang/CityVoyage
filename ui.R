@@ -39,7 +39,7 @@ ui <- dashboardPage(
                   title = "Control panel",
                   selectInput('locationtype', 'Location type', c("Country","City","Any location, e.g.<<Eiffel Tower>>")),
                   textInput(inputId= "location", label = "Location(Mind the case)", placeholder = "Enter a place", value = "France"),
-                  h4("If the display table doesn't appear below, please reload the application.")
+                  h4("If the display table doesn't appear below, please close the session and reload.")
                   
                 )),
               box(width = 20,
