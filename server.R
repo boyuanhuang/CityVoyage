@@ -17,6 +17,7 @@ library(rvest)
 
 library(shiny)
 library(DT)
+library(shinyjs)
 
 url <- function(address, return.call = "json", sensor = "false") {
   root <- "http://maps.google.com/maps/api/geocode/"
@@ -44,10 +45,6 @@ geoCode <- function(address,verbose=FALSE) {
 server <- function(input, output) {
     worldcities <- read.csv("world-cities.csv",header = TRUE)
     names(worldcities) <- c("city","country","region","geonameid")
-    
-    observeEvent(input$load, {
-      worldcities <- read.csv("world-cities.csv",header = TRUE)
-      names(worldcities) <- c("city","country","region","geonameid")})
     
     output$mapname <- renderText(paste("You're looking at ", input$location))
     output$type <-renderPrint({

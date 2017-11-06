@@ -35,13 +35,11 @@ ui <- dashboardPage(
       ),
       tabItem(tabName = "dashboard",
               fluidPage(
-                
                 box(width = 20,
                   title = "Control panel",
                   selectInput('locationtype', 'Location type', c("Country","City","Any location, e.g.<<Eiffel Tower>>")),
                   textInput(inputId= "location", label = "Location(Mind the case)", placeholder = "Enter a place", value = "France"),
-                  h5("If the display table doesn't appear below, please press load button."),
-                  actionButton("load", label = "Load")
+                  h4("If the display table doesn't appear below, please reload the application.")
                   
                 )),
               box(width = 20,
