@@ -61,7 +61,7 @@ server <- function(input, output) {
           return(paste(input$location, "!!  No such a country."))}
         else{
           word <-paste("Here is all cities of ", input$location, " over 15000 people.")
-          output$citytable <-DT::renderDataTable(thislocation %>% select("city"))
+          output$citytable <-DT::renderDataTable(thislocation %>% select("city","region","geonameid"))
           return(word)
         }
       }
@@ -74,7 +74,7 @@ server <- function(input, output) {
           return(paste(input$location, "!!  No such a city."))}
         else{
           word <-paste("The city ",input$location, " is located in following country(ies)")
-          output$citytable <-DT::renderDataTable(thislocation %>% select("country"))
+          output$citytable <-DT::renderDataTable(thislocation %>% select("country","region","geonameid"))
           return(word)
         }
       }

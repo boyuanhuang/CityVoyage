@@ -44,7 +44,7 @@ ui <- dashboardPage(
                 )),
               box(width = 20,
                   h4(textOutput("type")),
-                  p(textOutput("info")),
+                  h4(textOutput("info")),
                   dataTableOutput("citytable")
                 )
               
@@ -57,9 +57,8 @@ ui <- dashboardPage(
               h3("Use the slidebar to zoom"),
               sliderInput("slider", value = 10, "Zoom:", 1, 21, 1),
               selectInput("mapmode", label = "Displaymode", choices = c("roadmap","terrain","satellite")),
-              fluidPage(
-                box(plotOutput("map", height = 500, width = 500))
-              )
+              plotOutput("map", height = 500, width = 500)
+              
       ),
       tabItem(tabName = "Description",
               h2("Description of chosen location : "),
