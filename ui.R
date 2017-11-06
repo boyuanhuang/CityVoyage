@@ -61,7 +61,7 @@ ui <- dashboardPage(
               
       ),
       tabItem(tabName = "Description",
-              h2("Description of chosen location : "),
+              h2(textOutput(outputId = "descrip_location")),
               fluidRow(
                 box(
                   selectInput('language', label = 'Language', c("English","Francais"))

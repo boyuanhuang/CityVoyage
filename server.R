@@ -90,6 +90,9 @@ server <- function(input, output) {
       }
       
     })
+    output$descrip_location <-renderPrint({
+      cat("Description of ", input$location, " : ", "\n")
+    })
     output$descrip_text <- renderText({
     tosearch <- list(search = input$location)
     website_language <- "https://en.wikipedia.org/wiki/Main_Page"
