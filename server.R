@@ -40,10 +40,11 @@ geoCode <- function(address,verbose=FALSE) {
   }
 }
 
-worldcities <- read.csv("world-cities.csv",header = TRUE)
-names(worldcities) <- c("city","country","region","geonameid")
 
 server <- function(input, output) {
+    worldcities <- read.csv("world-cities.csv",header = TRUE)
+    names(worldcities) <- c("city","country","region","geonameid")
+  
     output$mapname <- renderText(paste("You're looking at ", input$location))
     output$type <-renderPrint({
       cat("The location type you have chosen is :", input$locationtype, "\n")
